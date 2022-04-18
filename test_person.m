@@ -27,6 +27,10 @@ elseif (count == 4)
     plot(f,P1, 'b');
 elseif (count == 5)
     plot(f,P1, 'c');
+elseif (count == 6)
+    plot(f,P1, 'k');
+elseif (count == 7)
+    plot(f,P1, 'm');
     disp("Done with samples")
 end
 count = count + 1;
