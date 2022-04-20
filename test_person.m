@@ -1,6 +1,6 @@
 %% Starting variables
-fs = 8000;
-number_of_samples = 5;
+fs = 48000;
+number_of_samples = 7;
 count = 1;
 time = 5;
 L = time*fs;
