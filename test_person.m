@@ -4,19 +4,19 @@ number_of_samples = 7;
 count = 1;
 time = 5;
 L = time*fs;
-all_samples = zeros(number_of_samples, L);
+all_samples_Cassidy = zeros(number_of_samples, L);
 
 %% Add sample
 % Plots the new fft on top of old
 % Relevant data is added to "all_ffts" variable
 sample = record(time, fs);
-all_samples(count,:) = sample;
+all_samples_Cassidy(count,:) = sample;
 Y = fft(sample);
 P2 = abs(Y/L);
 P1 = P2(1:L/2+1);
 P1(2:end-1) = 2*P1(2:end-1);
 f = fs*(0:(L/2))/L;
-all_ffts(count,:) = P1;
+all_ffts_Cassidy(count,:) = P1;
 if (count == 1)
     plot(f,P1, 'r');
 elseif (count == 2)
