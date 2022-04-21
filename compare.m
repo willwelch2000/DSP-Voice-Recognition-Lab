@@ -36,5 +36,7 @@ function score = compare(comparison, new_fft)
     maxmin_comparison = [maxmin_comparison(2:end-1) 0];
     maxmin_new_fft = [maxmin_new_fft(2:end-1) 0];
 
+    %% Do something with those extrema
+
     score = 5;
 end
