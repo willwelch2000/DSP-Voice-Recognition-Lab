@@ -1,4 +1,7 @@
 function score = compare_shifted_diff(comparison, new_fft)
+    % Similar to compare_simple_diff, but this shifts the signals so that
+    % the first peaks match on each
+
     % Scale both to have one as max
     comparison = comparison/max(comparison);
     new_fft = new_fft/max(new_fft);
