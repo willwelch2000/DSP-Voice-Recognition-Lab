@@ -1,10 +1,10 @@
-function top5_peaks = find_peaks(fft)
+function top5_peaks = find_peaks(signal)
     % Scale to have one as max
-    fft = fft/max(fft);
+    signal = signal/max(signal);
 
     % Average and downsample signal
     period = 50;
-    avg_fft = conv(fft, 1/period*ones(1, period));
+    avg_fft = conv(signal, 1/period*ones(1, period));
     down = 20;
     down_fft = avg_fft(1:down:end);
 
