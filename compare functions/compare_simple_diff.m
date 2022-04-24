@@ -1,6 +1,9 @@
 function score = compare_simple_diff(comparison, new_fft)
-    % Only consider up to 4000Hz
-    max_freq = 4000;
+    % Compare by simply taking difference between the two
+    % Score is proportional to total difference
+
+    % Only consider up to 2000Hz
+    max_freq = 2000;
     comparison = comparison(1:max_freq);
     new_fft = new_fft(1:max_freq);
 
