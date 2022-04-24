@@ -6,9 +6,9 @@ L = time*fs;    % # of samples in a recording
 sampFiles = dir("samples");
 sampFiles = sampFiles(3:end);
 
-% initialize cell arays
-sample_data = {};
-fft_data = {};
+% initialize struct arrays
+sample_data = [];
+fft_data = [];
 
 % iterate over all files
 for i = 1:length(sampFiles)
@@ -24,8 +24,9 @@ for i = 1:length(sampFiles)
     samples = load("samples/" + sampFiles(i).name);
     samples = getfield(samples, fieldName{1});
     
-    % store sample data with subject name in cell array
-    sample_data{i} = {subjectName{1}, samples};
+    % store sample data with subject name in struct
+    sample_data(i).name = subjectName{1};
+    sample_data(i).data = samples;
     
     % array to hold fft data for each sample
     transformedData = zeros(size(samples, 1), size(samples, 2)/2 + 1);
@@ -44,8 +45,9 @@ for i = 1:length(sampFiles)
         transformedData(j, :) = P1;
     end
     
-    % store fft data with subject name in cell array
-    fft_data{i} = {subjectName{1}, transformedData};
+    % store fft data with subject name in struct
+    fft_data(i).name = subjectName{1};
+    fft_data(i).data = transformedData;
 end
 
 % save variables to .mat files
