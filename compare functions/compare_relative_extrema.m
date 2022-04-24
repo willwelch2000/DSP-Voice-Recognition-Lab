@@ -1,4 +1,4 @@
-function score = compare(comparison, new_fft)
+function score = compare_relative_extrema(comparison, new_fft)
     % Parameters: 
     %   comparison is fft of sample inside database to compare
     %   against
