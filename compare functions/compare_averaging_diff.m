@@ -2,10 +2,12 @@ function score = compare_averaging_diff(comparison_fft, sample_fft)
     % Scoring function that averages the two ffts and reports the total
     % difference between them
 
-    % Only consider up to 1700Hz
-    max_freq = 1700; % Potentially change this value
-    comparison_fft = comparison_fft(1:max_freq);
-    sample_fft = sample_fft(1:max_freq);
+    % Only consider up to 450Hz for each fft
+    cutoff_freq = 450;
+    fs = 48000; % Highest frequency on fft is half of this
+    cutoff_index = cutoff_freq/(fs/2)*(length(comparison_fft)-1);
+    comparison_fft = comparison_fft(1:cutoff_index);
+    sample_fft = sample_fft(1:cutoff_index);
 
     % Average both signals
     period = 25;

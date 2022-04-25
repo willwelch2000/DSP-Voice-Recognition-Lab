@@ -3,10 +3,10 @@ function choice = prediction(person, sample)
 
     choice = "Unknown User";
     [top_people, top_values] = top_results(person, sample);
-    absolute_threshold = 180;
+    secondary_threshold = 265;
     % First value meets threshold and there's at least 2 of this person in
-    % top 4--was 5
-    if (top_values(1) < absolute_threshold && length(find(top_people(1:4) == top_people(1))) > 1)
+    % top 4
+    if (top_values(2) < secondary_threshold && length(find(top_people(1:4) == top_people(1))) > 1)
         choice = top_people(1);
     end
 end
