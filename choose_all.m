@@ -13,8 +13,3 @@ for i=1:length(test_data)
     all_predictions(i).prediction1 = prediction(person, 1);
     all_predictions(i).prediction2 = prediction(person, 2);
 end
-
-% Not working correctly:
-    % Chris
-    % Katherine
-    % Woodrow
