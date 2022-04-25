@@ -2,8 +2,8 @@ function score = compare_averaging_diff(comparison_fft, sample_fft)
     % Scoring function that averages the two ffts and reports the total
     % difference between them
 
-    % Only consider up to 2000Hz
-    max_freq = 2000; % Potentially change this value
+    % Only consider up to 3000Hz
+    max_freq = 3000; % Potentially change this value
     comparison_fft = comparison_fft(1:max_freq);
     sample_fft = sample_fft(1:max_freq);
 

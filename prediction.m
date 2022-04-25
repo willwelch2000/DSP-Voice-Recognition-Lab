@@ -3,8 +3,8 @@ function choice = prediction(person, sample)
 
     choice = "User not in database.";
     [top_people, top_values] = top_results(person, sample);
-    threshold = 200;
-    if (top_values(1) < threshold)
+    absolute_threshold = 295;
+    if (top_values(1) < absolute_threshold)
         choice = top_people(1);
     end
 end

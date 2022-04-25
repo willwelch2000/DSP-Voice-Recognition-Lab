@@ -6,9 +6,9 @@
 
 all_predictions = [];
 num_samples = 2;
-load sample_data.mat
-for i=1:length(sample_data)
-    person = sample_data(i).name;
+load test_data.mat
+for i=1:length(test_data)
+    person = test_data(i).name;
     all_predictions(i).name = person;
     all_predictions(i).prediction1 = prediction(person, 1);
     all_predictions(i).prediction2 = prediction(person, 2);
@@ -17,4 +17,4 @@ end
 % Not working correctly:
     % Chris
     % Katherine
-    % Amy--switch 5 and 7 and it should work
+    % Woodrow
