@@ -1,10 +1,12 @@
 function choice = prediction(person, sample)
     % Makes an actual guess using "compare_averaging_diff" scorer
 
-    choice = "User not in database.";
+    choice = "Unknown User";
     [top_people, top_values] = top_results(person, sample);
-    absolute_threshold = 295;
-    if (top_values(1) < absolute_threshold)
+    absolute_threshold = 180;
+    % First value meets threshold and there's at least 2 of this person in
+    % top 4--was 5
+    if (top_values(1) < absolute_threshold && length(find(top_people(1:4) == top_people(1))) > 1)
         choice = top_people(1);
     end
 end
