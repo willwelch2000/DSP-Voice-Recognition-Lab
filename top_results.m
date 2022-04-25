@@ -1,9 +1,9 @@
-function [top, ordered_scores] = top_results(person, method, sample)
+function [top, ordered_scores] = top_results(person, sample)
     % Returns array of descending list of people--top is closest match--and
     % an array of their corresponding scores
     % Sample is which sample to be tested--1 or 2
 
-    results = compare_scores(person, method);
+    results = compare_scores(person, "compare_averaging_diff");
 
     % Make array of scores and array of people
     all_scores = [];
