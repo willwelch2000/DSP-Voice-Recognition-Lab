@@ -59,7 +59,7 @@ save('system_data.mat', 'system_data');
 %% Now do the same for test samples
 
 % get list of sample files
-sampFiles = dir("test samples");
+sampFiles = dir("split data/test");
 sampFiles = sampFiles(3:end);
 
 % initialize struct arrays
