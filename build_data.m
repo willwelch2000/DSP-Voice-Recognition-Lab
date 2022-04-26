@@ -10,7 +10,7 @@ split_samples();
 %% Build data for system samples
 
 % get list of sample files
-sampFiles = dir("system samples");
+sampFiles = dir("split data/system");
 sampFiles = sampFiles(3:end);
 
 % initialize struct arrays
@@ -25,7 +25,7 @@ for i = 1:length(sampFiles)
     subjectName = subjectName(1);
     
     % get the list of samples
-    load("system samples/" + sampFiles(i).name);
+    load("split data/system/" + sampFiles(i).name);
     samples = system_samples;
     
     % store sample data with subject name in struct
@@ -74,7 +74,7 @@ for i = 1:length(sampFiles)
     subjectName = subjectName(1);
     
     % get the list of samples
-    load("test samples/" + sampFiles(i).name);
+    load("split data/test/" + sampFiles(i).name);
     samples = test_samples;
     
     % store sample data with subject name in struct

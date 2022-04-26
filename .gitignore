@@ -1,2 +1,9 @@
 # ignore autosave files
 *.asv
+
+# ignore split data files
+split\ data
+
+# ignore big built data files
+system_data.mat
+test_data.mat
