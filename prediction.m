@@ -10,7 +10,7 @@ function choice = prediction(person, sample)
 
     choice = "Unknown User";
     [top_people, top_values] = top_results(person, sample);
-    secondary_threshold = 250; % At least two correct samples must be below this
+    secondary_threshold = 490; % At least two correct samples must be below this
     top_person_occurrences = find(top_people(1:4) == top_people(1)); % Occurrences of top result in the top 4
     if (length(top_person_occurrences) > 1 && top_values(top_person_occurrences(2)) < secondary_threshold)
         choice = top_people(1);
